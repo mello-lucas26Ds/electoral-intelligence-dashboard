@@ -51,25 +51,25 @@ Campanhas políticas e engenheiros de dados frequentemente enfrentam dados bruto
 
 ```mermaid
 graph TD
-    subgraph Data Pipeline (Medallion Architecture)
-        A[data/raw/electoral_raw.json] -->|Ingestão & Validação| B(scripts/etl_pipeline.cjs / .py)
-        B -->|Higienização & Tipagem| C[data/clean/electoral_clean.json]
-        C -->|Agregação & Modelagem| D[data/processed/electoral_processed.json]
-        C -->|Sumários de KPIs| E[src/data/processed/kpis_summary.json]
+    subgraph Data_Pipeline ["Data Pipeline (Medallion Architecture)"]
+        A["data/raw/electoral_raw.json"] -->|Ingestão & Validação| B["scripts/etl_pipeline.cjs / .py"]
+        B -->|Higienização & Tipagem| C["data/clean/electoral_clean.json"]
+        C -->|Agregação & Modelagem| D["data/processed/electoral_processed.json"]
+        C -->|Sumários de KPIs| E["src/data/processed/kpis_summary.json"]
     end
 
-    subgraph Camada de Serviços (Node.js/TS)
-        D --> F[ElectoralDataService Singleton]
+    subgraph Service_Layer ["Camada de Serviços (Node.js / TypeScript)"]
+        D --> F["ElectoralDataService Singleton"]
         E --> F
-        F -->|ServiceResponse<T> SLA < 2ms| G[React Dashboard Engine]
+        F -->|ServiceResponse SLA < 2ms| G["React Dashboard Engine"]
     end
 
-    subgraph Camada de Apresentação
-        G --> H1[Barra de KPIs Executivos]
-        G --> H2[Matriz 2D Heatmap]
-        G --> H3[Mapa Territorial]
-        G --> H4[Matriz Estratégica]
-        G --> H5[Tabela Filtrada de Dados]
+    subgraph Presentation_Layer ["Camada de Apresentação"]
+        G --> H1["Barra de KPIs Executivos"]
+        G --> H2["Matriz 2D Heatmap"]
+        G --> H3["Mapa Territorial"]
+        G --> H4["Matriz Estratégica"]
+        G --> H5["Tabela Filtrada de Dados"]
     end
 ```
 

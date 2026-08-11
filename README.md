@@ -52,25 +52,25 @@ Political campaigns and data engineers often face fragmented raw data (CSV/JSON)
 
 ```mermaid
 graph TD
-    subgraph Data Pipeline (Medallion Architecture)
-        A[data/raw/electoral_raw.json] -->|Ingestion & Validation| B(scripts/etl_pipeline.cjs / .py)
-        B -->|Sanitizing & Typing| C[data/clean/electoral_clean.json]
-        C -->|Aggregation & Modeling| D[data/processed/electoral_processed.json]
-        C -->|KPI Summaries| E[src/data/processed/kpis_summary.json]
+    subgraph Data_Pipeline ["Data Pipeline (Medallion Architecture)"]
+        A["data/raw/electoral_raw.json"] -->|Ingestion & Validation| B["scripts/etl_pipeline.cjs / .py"]
+        B -->|Sanitizing & Typing| C["data/clean/electoral_clean.json"]
+        C -->|Aggregation & Modeling| D["data/processed/electoral_processed.json"]
+        C -->|KPI Summaries| E["src/data/processed/kpis_summary.json"]
     end
 
-    subgraph Service Layer (Node.js/TS)
-        D --> F[ElectoralDataService Singleton]
+    subgraph Service_Layer ["Service Layer (Node.js / TypeScript)"]
+        D --> F["ElectoralDataService Singleton"]
         E --> F
-        F -->|ServiceResponse<T> SLA < 2ms| G[React Dashboard Engine]
+        F -->|ServiceResponse SLA < 2ms| G["React Dashboard Engine"]
     end
 
-    subgraph Presentation Layer
-        G --> H1[Executive KPI Bar]
-        G --> H2[2D Heatmap Matrix]
-        G --> H3[Territory Map]
-        G --> H4[Strategic Matrix]
-        G --> H5[Filtered Data Table]
+    subgraph Presentation_Layer ["Presentation Layer"]
+        G --> H1["Executive KPI Bar"]
+        G --> H2["2D Heatmap Matrix"]
+        G --> H3["Territory Map"]
+        G --> H4["Strategic Matrix"]
+        G --> H5["Filtered Data Table"]
     end
 ```
 
