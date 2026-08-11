@@ -1,0 +1,112 @@
+{
+  "totalRegistros": 7270,
+  "totalVotos": 5279054,
+  "totalZonas": 13,
+  "totalPartidos": 26,
+  "totalCandidatos": 577,
+  "topCandidatos": [
+    {
+      "name": "WILSON LIMA (44)",
+      "votes": 973471,
+      "share": 18.44025463653147
+    },
+    {
+      "name": "EDUARDO BRAGA (15)",
+      "votes": 550579,
+      "share": 10.42950119472163
+    },
+    {
+      "name": "CORONEL MENEZES (222)",
+      "votes": 544262,
+      "share": 10.30983960383811
+    },
+    {
+      "name": "AMOM MANDEL (2323)",
+      "votes": 266382,
+      "share": 5.0460177145374905
+    },
+    {
+      "name": "AMAZONINO MENDES (23)",
+      "votes": 262856,
+      "share": 4.979225444558817
+    },
+    {
+      "name": "OMAR AZIZ (555)",
+      "votes": 251630,
+      "share": 4.7665737080923964
+    },
+    {
+      "name": "RICARDO NICOLAU (77)",
+      "votes": 194153,
+      "share": 3.677799090518869
+    },
+    {
+      "name": "ARTHUR NETO (451)",
+      "votes": 111290,
+      "share": 2.1081428604443144
+    },
+    {
+      "name": "CAPITÃO ALBERTO NETO (2210)",
+      "votes": 109888,
+      "share": 2.0815850718708315
+    },
+    {
+      "name": "LUIZ CASTRO (123)",
+      "votes": 92470,
+      "share": 1.751639593002837
+    }
+  ],
+  "topPartidos": [
+    {
+      "party": "UNIÃO",
+      "votes": 1307524,
+      "share": 24.768149748041978
+    },
+    {
+      "party": "PL",
+      "votes": 804848,
+      "share": 15.246064919964827
+    },
+    {
+      "party": "MDB",
+      "votes": 614223,
+      "share": 11.635095985000344
+    },
+    {
+      "party": "CIDADANIA",
+      "votes": 562828,
+      "share": 10.661531403164279
+    },
+    {
+      "party": "PSD",
+      "votes": 341939,
+      "share": 6.477277936539387
+    },
+    {
+      "party": "AVANTE",
+      "votes": 270885,
+      "share": 5.131317088251039
+    },
+    {
+      "party": "SOLIDARIEDADE",
+      "votes": 232464,
+      "share": 4.403516236052899
+    },
+    {
+      "party": "PDT",
+      "votes": 187189,
+      "share": 3.54588151589281
+    },
+    {
+      "party": "REPUBLICANOS",
+      "votes": 172460,
+      "share": 3.2668731935683932
+    },
+    {
+      "party": "PSDB",
+      "votes": 139811,
+      "share": 2.6484101128724955
+    }
+  ],
+  "generatedAt": "2026-08-11T20:36:49.489Z"
+}
