@@ -1,5 +1,5 @@
 import { ElectoralVoteRecord } from '../types';
-import manausData from './manaus_data.json';
+import electoralProcessedData from './processed/electoral_processed.json';
 
 export const CANDIDATES = [
   { id: 'Ana Silva (10)', name: 'Ana Silva', partido: 'Partido 10', color: '#2563eb' },
@@ -9,5 +9,5 @@ export const CANDIDATES = [
 ];
 
 export function generateInitialDataset(): ElectoralVoteRecord[] {
-  return manausData as ElectoralVoteRecord[];
+  return electoralProcessedData as ElectoralVoteRecord[];
 }

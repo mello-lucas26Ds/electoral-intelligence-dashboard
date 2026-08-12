@@ -1,11 +1,11 @@
 import json
 import os
+from datetime import datetime
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RAW_PATH = os.path.join(BASE_DIR, 'data', 'raw', 'electoral_raw.json')
 CLEAN_PATH = os.path.join(BASE_DIR, 'data', 'clean', 'electoral_clean.json')
 PROCESSED_PATH = os.path.join(BASE_DIR, 'data', 'processed', 'electoral_processed.json')
-SRC_DATA_PATH = os.path.join(BASE_DIR, 'src', 'data', 'manaus_data.json')
 SRC_PROCESSED_PATH = os.path.join(BASE_DIR, 'src', 'data', 'processed', 'electoral_processed.json')
 KPIS_SUMMARY_PATH = os.path.join(BASE_DIR, 'src', 'data', 'processed', 'kpis_summary.json')
 
@@ -52,6 +52,7 @@ def run_pipeline():
     total_votos = sum(r['votos'] for r in clean_data)
     partidos_map = {}
     candidatos_map = {}
+    zonas_set = set()
 
     for rec in clean_data:
         p = rec['partido']
@@ -59,6 +60,7 @@ def run_pipeline():
         v = rec['votos']
         partidos_map[p] = partidos_map.get(p, 0) + v
         candidatos_map[c] = candidatos_map.get(c, 0) + v
+        zonas_set.add(rec['zona'])
 
     top_candidatos = sorted(
         [{"name": k, "votes": v, "share": round((v / total_votos) * 100, 2) if total_votos > 0 else 0}
@@ -75,19 +77,18 @@ def run_pipeline():
     kpis = {
         "totalRegistros": len(clean_data),
         "totalVotos": total_votos,
+        "totalZonas": len(zonas_set),
         "totalPartidos": len(partidos_map),
         "totalCandidatos": len(candidatos_map),
         "topCandidatos": top_candidatos,
-        "topPartidos": top_partidos
+        "topPartidos": top_partidos,
+        "generatedAt": datetime.now().isoformat()
     }
 
     with open(PROCESSED_PATH, 'w', encoding='utf-8') as f:
         json.dump(clean_data, f, ensure_ascii=False)
 
     with open(SRC_PROCESSED_PATH, 'w', encoding='utf-8') as f:
-        json.dump(clean_data, f, ensure_ascii=False)
-
-    with open(SRC_DATA_PATH, 'w', encoding='utf-8') as f:
         json.dump(clean_data, f, ensure_ascii=False)
 
     with open(KPIS_SUMMARY_PATH, 'w', encoding='utf-8') as f:

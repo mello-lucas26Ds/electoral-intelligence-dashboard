@@ -25,7 +25,7 @@ import { KpiCardsSection } from './components/KpiCardsSection';
 import { Heatmap2DView } from './components/Heatmap2DView';
 import { TerritoryMapView } from './components/TerritoryMapView';
 import { StrategicMatrixView } from './components/StrategicMatrixView';
-import { DataTableVIew } from './components/DataTableVIew';
+import { DataTableView } from './components/DataTableView';
 import { FileUploadModal } from './components/FileUploadModal';
 import { CellDetailModal } from './components/CellDetailModal';
 
@@ -471,7 +471,7 @@ export default function App() {
           )}
 
           {activeTab === 'datatable' && (
-            <DataTableVIew data={filteredRecords} onExport={handleExport} />
+            <DataTableView data={filteredRecords} onExport={handleExport} />
           )}
         </main>
       </div>

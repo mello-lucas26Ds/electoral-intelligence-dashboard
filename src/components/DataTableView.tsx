@@ -2,12 +2,12 @@ import React, { useState, useMemo } from 'react';
 import { Table, ArrowUpDown, ChevronLeft, ChevronRight, FileSpreadsheet } from 'lucide-react';
 import { ElectoralVoteRecord } from '../types';
 
-interface DataTableVIewProps {
+interface DataTableViewProps {
   data: ElectoralVoteRecord[];
   onExport: () => void;
 }
 
-export const DataTableVIew: React.FC<DataTableVIewProps> = ({ data, onExport }) => {
+export const DataTableView: React.FC<DataTableViewProps> = ({ data, onExport }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const [pageSize, setPageSize] = useState(25);
   const [sortField, setSortField] = useState<keyof ElectoralVoteRecord>('votos');

@@ -5,7 +5,6 @@ const path = require('path');
 const RAW_PATH = path.join(__dirname, '../data/raw/electoral_raw.json');
 const CLEAN_PATH = path.join(__dirname, '../data/clean/electoral_clean.json');
 const PROCESSED_PATH = path.join(__dirname, '../data/processed/electoral_processed.json');
-const SRC_DATA_PATH = path.join(__dirname, '../src/data/manaus_data.json');
 const SRC_PROCESSED_PATH = path.join(__dirname, '../src/data/processed/electoral_processed.json');
 const KPIS_SUMMARY_PATH = path.join(__dirname, '../src/data/processed/kpis_summary.json');
 
@@ -96,7 +95,6 @@ const kpisSummary = {
 
 fs.writeFileSync(PROCESSED_PATH, JSON.stringify(cleanData));
 fs.writeFileSync(SRC_PROCESSED_PATH, JSON.stringify(cleanData));
-fs.writeFileSync(SRC_DATA_PATH, JSON.stringify(cleanData));
 fs.writeFileSync(KPIS_SUMMARY_PATH, JSON.stringify(kpisSummary, null, 2));
 
 console.log(`✅ Processed Gold dataset saved to ${PROCESSED_PATH}`);

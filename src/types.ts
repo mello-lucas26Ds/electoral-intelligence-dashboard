@@ -20,7 +20,7 @@ export interface FilterState {
   minVotos: number;
 }
 
-export type ViewTab = 'heatmap2d' | 'territory' | 'strategic' | 'partyview' | 'datatable';
+export type ViewTab = 'heatmap2d' | 'territory' | 'strategic' | 'datatable';
 
 export interface AxisOption {
   key: 'zona' | 'municipio' | 'cargo' | 'partido' | 'candidato' | 'situacao';
